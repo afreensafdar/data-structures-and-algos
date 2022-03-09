@@ -38,8 +38,44 @@ palindrome("racecar");
 */
 
 
+//====Dan Approach ======
+/*function isPalendrome(str){
+	let first, last;
+	while(str.length > 1){
+		first = str[0];
+		last = str[str.length - 1];
+		if(first != last) return false
+		str = str.slice(1, str.length - 1)
+	}
+	return true
+} */
+
 function isPermutationPalendrome(str){
-	// Complete the function!
+  // Complete the function!
+  	/*
+	SUMMARY
+		Permutation == every possible order of letters
+		'abc' => 'acb', 'bca', 'bac', 'cba', 'cab'
+		Can we arrange the letters of a word to make it a palendrome?
+	
+	EXAMPLES
+	racecar => true
+	{r: 2, a : 2, c : 2, e: 1} odds: 1
+	rrcceea => true (racecar)
+	{r: 2, a : 2, c : 2, e: 1} odds: 1
+	eepp => true (peep)
+	{e: 2, p:2} odds: 0
+	dog => false
+	{d:1, o: 1, g:1} odds: 3
+	man => false
+	{m:1, a: 1, n:1} odds: 3
+	tag => false
+	{t:1, a: 1, g:1} odds: 3
+	APPROACH
+	Count all the letters in the word
+	Count the # of odd counted-letters
+	Return if odds <= 1 
+	*/
 	let charMap = new Map();
 	for(let i=0; i <str.length; i++){
 	  if(charMap.get(str[i])) {
@@ -56,75 +92,24 @@ function isPermutationPalendrome(str){
 }
 module.exports = {isPalendrome, isPermutationPalendrome}
 
+//====Dan Approach ======
+/*const counts  = {};
+	let odds = 0;
 
+	for(let i = 0; i < str.length; i++){
+		let char = str[i];
+		if(counts.hasOwnProperty(char)){
+			counts[char] += 1
+		} else {
+			counts[char] = 1
+		}
+	}
 
+	for(let key in counts){
+		if(counts[key] % 2 != 0){
+			odds++
+		}
+	}
 
-
-
-
-
-
-
-
-//===============================//java==========================
-/*How to find if a string is a palindrome using Java? 
-StringBuffer provides a method with name reverse() one way to check for a palindrome is
-
-Create a StringBuffer object by passing the required string as a parameter to the constructor.
-Reverse the contents of the object using the reverse() method.
-Convert the StringBuffer object to Sting using the toString() method.
-Now, compare the String and the reversed one, if true, the given string is a palindrome.
-Example
-Live Demo
-
-public class StringPalindrome {
-   public static void main(String args[]){
-
-      String myString = "anna";
-      StringBuffer buffer = new StringBuffer(myString);
-      buffer.reverse();
-      String data = buffer.toString();
-      if(myString.equals(data)){
-         System.out.println("Given String is palindrome");
-      }else{
-         System.out.println("Given String is not palindrome");
-      }
-   }
-}
-
-
-To verify whether the given string is a palindrome (using arrays)
-
-Convert the given string into a character array using the toCharArray() method.
-Make a copy of this array.
-Reverse the array.
-Compare the original array and the reversed array.
-in case of match given string is a palindrome.
-Example
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class Palindrome {
-   public static void main(String args[]) {
-      System.out.println("Enter a string ");
-      Scanner sc = new Scanner(System.in);
-      String s = sc.nextLine();
-      char[] myArray = s.toCharArray();
-      int size = myArray.length;
-      char [] original = Arrays.copyOf(myArray,myArray.length);
-
-      for (int i = 0; i < size / 2; i++) {
-         char temp = myArray[i];
-         myArray[i] = myArray[size-i-1];
-         myArray[size-i-1] = temp;
-      }
-      System.out.println("Original Array"+Arrays.toString(original));
-      System.out.println("Reverse Array"+Arrays.toString(myArray));
-
-      if(Arrays.equals(myArray, original)) {
-         System.out.println("Entered string is a palindrome");
-      } else {
-         System.out.println("Entered string is not a palindrome");
-      }
-   }
-} */
+	return odds <= 1
+ */

@@ -8,12 +8,12 @@ const str5 = 'racecarQQ'
 
 describe('isPalendrome function', () => {
 
-	xit('returns a boolean for if a string is a palendrome (spelled same forward backwards)', () => {
+	it('returns a boolean for if a string is a palendrome (spelled same forward backwards)', () => {
 		expect(isPalendrome(str1)).toBe(true);
 		expect(isPalendrome(str2)).toBe(false);
 	});
 
-	xit('is case sensitive', () => {
+	it('is case sensitive', () => {
 		expect(isPalendrome(str3)).toBe(false);
 	});
 });
@@ -36,7 +36,7 @@ describe('isPermutationPalendrome function', () => {
 		What does that tell you?
 	*/
 
-	xit('returns boolean if any permutation of a string is a palendrome!!', () => {
+	it('returns boolean if any permutation of a string is a palendrome!!', () => {
 		expect(isPermutationPalendrome(str1)).toBe(true);
 		expect(isPermutationPalendrome(str2)).toBe(false);
 		expect(isPermutationPalendrome(str4)).toBe(true);

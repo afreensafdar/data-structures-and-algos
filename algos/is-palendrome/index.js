@@ -50,6 +50,21 @@ palindrome("racecar");
 	return true
 } */
 
+
+// Recursive Solution
+function isPalendrome(str){ 
+	if(str.length <= 1) { // Base case
+		return true
+	} else { // Recursive Case
+		if(str[0] != str[str.length - 1]){
+			return false
+		} else {
+			str = str.slice(1, str.length - 1)
+			return isPalendrome(str)
+		}
+	}
+}
+
 function isPermutationPalendrome(str){
   // Complete the function!
   	/*

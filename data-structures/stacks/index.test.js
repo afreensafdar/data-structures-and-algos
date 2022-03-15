@@ -7,17 +7,17 @@ describe('Stack data structure', () => {
 		stack = new Stack()
 	})
 
-	xit('has a size of 0 initially', () => {
+	it('has a size of 0 initially', () => {
 		expect(stack.size).toBe(0)
 	})
 
 	describe('push method', () => {
 		
-		xit('has an push method', () => {
+		it('has an push method', () => {
 			expect(typeof stack.push).toBe('function')
 		})
 
-		xit('increases size when item is added', () => {
+		it('increases size when item is added', () => {
 			stack.push('Snoopy')
 			expect(stack.size).toBe(1)
 		})

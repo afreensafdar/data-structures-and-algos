@@ -10,36 +10,36 @@ describe("Linked List data structure", () => {
 	describe("Node data structure", () => {
 		let node = new Node('banana')
 
-		xit('has a value', () => {
+		it('has a value', () => {
 			expect(node.value).toBe("banana");
 		});
 
-		xit('has a property of previous, set to null', () => {
+		it('has a property of previous, set to null', () => {
 			expect(node.previous).toBe(null)
 		});
 
-		xit('has a property of next, set to null', () => {
+		it('has a property of next, set to null', () => {
 			expect(node.next).toBe(null)
 		});
 	});
 
 	describe("Linked Lists implementation" , () => {
 
-		xit('should have a head property, set to null', () => {
+		it('should have a head property, set to null', () => {
 			expect(ll.head).toBe(null);
 		});
 
-		xit('should have a tail property, set to null', () => {
+		it('should have a tail property, set to null', () => {
 			expect(ll.tail).toBe(null);
 		});
 
 		describe('addToTail method', () => {
 
-			xit("has a addToTail method", () => {
+			it("has a addToTail method", () => {
 				expect(typeof ll.addToTail).toBe('function');
 			});
 
-			xit("adds a node to tail of linked list", () => {
+			it("adds a node to tail of linked list", () => {
 				let newNode = new Node('apple')
 				ll.addToTail(newNode)
 
@@ -47,7 +47,7 @@ describe("Linked List data structure", () => {
 				expect(ll.tail.value).toBe('apple');
 			});
 
-			xit("can add multiple nodes to tail without overwriting previous nodes", () => {
+			it("can add multiple nodes to tail without overwriting previous nodes", () => {
 				let banana = new Node('banana');
 				let apple = new Node('apple');
 				let mango = new Node('mango');
@@ -60,7 +60,7 @@ describe("Linked List data structure", () => {
 				expect(ll.tail.previous.value).toBe('apple');
 			});
 
-			xit('if a linked list is created with only one node, that node is both the Head and Tail', () => {
+			it('if a linked list is created with only one node, that node is both the Head and Tail', () => {
 				let banana = new Node("banana");
 				ll.addToTail(banana);
 
@@ -73,17 +73,17 @@ describe("Linked List data structure", () => {
 
 		describe('addToHead method', () => {
 			
-			xit('has addToHead method', () => {
+			it('has addToHead method', () => {
 				expect(typeof ll.addToHead).toBe('function');
 			})
 			
-			xit('should use `Node` class to add nodes', () => {
+			it('should use `Node` class to add nodes', () => {
 				let banana = new Node('banana')
 				ll.addToHead(banana)
 				expect(ll.head instanceof Node).toBe(true)
 			})
 
-		    xit('should be able to add to head without removing or overwriting existing nodes', () => {
+		    it('should be able to add to head without removing or overwriting existing nodes', () => {
 		        let banana = new Node('banana');
 		        let mango = new Node('mango');
 
@@ -95,7 +95,7 @@ describe("Linked List data structure", () => {
 		      	expect(ll.head.next.value).toBe('banana')
 		    })
 
-		    xit('if the linked list consists of a single node after adding to head, that node should be both the head and the tail', () => {
+		    it('if the linked list consists of a single node after adding to head, that node should be both the head and the tail', () => {
 		        let apple = new Node('apple');
 		        ll.addToHead(apple);
 
@@ -106,11 +106,11 @@ describe("Linked List data structure", () => {
 
 		describe('removeTail method', () => {
 
-			xit('has a removeTail method', () => {
+			it('has a removeTail method', () => {
 				expect(typeof ll.removeTail).toBe('function');
 			})
 			
-			xit('should return the `value` of the removed tail node', () => {
+			it('should return the `value` of the removed tail node', () => {
 				let banana = new Node('banana');
 		        let mango = new Node('mango');
 
@@ -121,7 +121,7 @@ describe("Linked List data structure", () => {
 				expect(ll.removeTail().value).toBe('banana')
 			})
 
-			xit('should reassign the `tail` after the current tail node is removed', () => {
+			it('should reassign the `tail` after the current tail node is removed', () => {
 				let banana = new Node('banana');
 		        let mango = new Node('mango');
 		        let apple = new Node('apple');
@@ -137,7 +137,7 @@ describe("Linked List data structure", () => {
 				expect(ll.tail.value).toBe('banana')
 			})
 
-			xit('should make sure the `next` of any tail is null', () => {
+			it('should make sure the `next` of any tail is null', () => {
 				let banana = new Node('banana');
 				let mango = new Node('mango');
 		        let apple = new Node('apple');
@@ -155,7 +155,7 @@ describe("Linked List data structure", () => {
 				expect(ll.tail.next).toBe(null)
 			})
 
-			xit('returns null if there is no tail to remove (ie: the list is empty, or all nodes have been removed)', () => {
+			it('returns null if there is no tail to remove (ie: the list is empty, or all nodes have been removed)', () => {
 				expect(ll.removeTail()).toBe(null)
 
 				let banana = new Node('banana');

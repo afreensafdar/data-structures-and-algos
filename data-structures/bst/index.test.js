@@ -12,23 +12,23 @@ describe('BinarySearchTree', () => {
 
   describe('inital bst', () => {
   	
-  	xit('inital tree should take a value argument in its constructor', () => {
+  	it('inital tree should take a value argument in its constructor', () => {
   		expect(bst.value).toBe(5);
   	});
 
-  	xit('inital tree should have left and right values set to null', () => {
+  	it('inital tree should have left and right values set to null', () => {
   		expect(bst.left).toBe(null);
   		expect(bst.right).toBe(null);
   	});
   })
 
-  xit('has methods named `insert`, and `contains`', () => {
+  it('has methods named `insert`, and `contains`', () => {
     expect(typeof bst.insert).toBe('function')
     expect(typeof bst.contains).toBe('function')
   })
 
   describe('`insert` method', () => {
-    xit('makes nodes on the correct branches, without overwriting existing nodes', () => {
+    it('makes nodes on the correct branches, without overwriting existing nodes', () => {
       bst.insert(2)
       bst.insert(200)
       expect(bst.value).toBe(5)
@@ -36,7 +36,7 @@ describe('BinarySearchTree', () => {
       expect(bst.right.value).toBe(200)
     })
 
-    xit('sorts values when adding', () => {
+    it('sorts values when adding', () => {
       testValues.forEach(val => bst.insert(val))
       expect(bst.value).toBe(5)
       expect(bst.left.value).toBe(3)
@@ -48,7 +48,7 @@ describe('BinarySearchTree', () => {
   })
 
   describe('`contains` method', () => {
-    xit('returns true if passed a value that exists in the tree', () => {
+    it('returns true if passed a value that exists in the tree', () => {
       testValues.forEach((value) => {
         bst.insert(value)
       })

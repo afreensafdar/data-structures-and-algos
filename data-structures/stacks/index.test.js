@@ -27,11 +27,11 @@ describe('Stack data structure', () => {
 
 	describe('pop method', () => {
 		
-		xit('has an pop method', () => {
+		it('has an pop method', () => {
 			expect(typeof stack.pop).toBe('function')
 		})
 
-		xit('decreases size when item is popped', () => {
+		it('decreases size when item is popped', () => {
 			stack.push('Snoopy')
 			stack.push('Woodstock')
 			stack.push('Charlie Brown')
@@ -39,7 +39,7 @@ describe('Stack data structure', () => {
 			expect(stack.size).toBe(2)
 		})
 
-		xit('Pop returns items based on first in last out', () => {
+		it('Pop returns items based on first in last out', () => {
 			stack.push('first')
 			stack.push('second')
 			stack.push('third')
